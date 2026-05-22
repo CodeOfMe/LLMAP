@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4E4E4E"/>
+    </marker>
+    <marker id="arr-back" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#404040"/>
+    </marker>
+  </defs>
+
+  <rect x="10" y="10" width="780" height="500" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Title -->
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Agent Loop: From Chat to Action Loop</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">参考 ReAct 范式 [Yao et al., 2023] 和 OpenAI Function Calling [OpenAI, 2023]</text>
+
+  <!-- User -->
+  <circle cx="100" cy="150" r="35" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="1.5"/>
+  <text x="100" y="145" text-anchor="middle" font-size="11" fill="#2D2D2D">User</text>
+  <text x="100" y="158" text-anchor="middle" font-size="9" fill="#4A4A4A">Input Question</text>
+  
+  <line x1="135" y1="150" x2="200" y2="150" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="167" y="143" text-anchor="middle" font-size="8" fill="#6A6A6A">Question</text>
+
+  <!-- LLM -->
+  <rect x="205" y="115" width="160" height="70" rx="12" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1.5"/>
+  <text x="285" y="145" text-anchor="middle" font-size="12" font-weight="700" fill="#353535">LLM</text>
+  <text x="285" y="162" text-anchor="middle" font-size="9" fill="#444444">Think → Decide Action</text>
+  <text x="285" y="175" text-anchor="middle" font-size="8" fill="#444444">Or reply directly</text>
+
+  <!-- Decision diamond -->
+  <polygon points="460,150 520,120 580,150 520,180" fill="#E5E0E5" stroke="#5D5D60" stroke-width="1.5"/>
+  <text x="520" y="148" text-anchor="middle" font-size="10" fill="#3D3D3D">Tool</text>
+  <text x="520" y="160" text-anchor="middle" font-size="10" fill="#3D3D3D">Call?</text>
+  
+  <line x1="365" y1="150" x2="460" y2="150" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- Tool call path (Yes) -->
+  <text x="590" y="138" text-anchor="start" font-size="9" fill="#4D4D4D" font-weight="700">Yes</text>
+  <line x1="580" y1="150" x2="650" y2="150" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- Tool execution -->
+  <rect x="655" y="125" width="120" height="50" rx="8" fill="#D5D5D5" stroke="#585858" stroke-width="1.5"/>
+  <text x="715" y="147" text-anchor="middle" font-size="11" font-weight="700" fill="#303030">Execute Tool</text>
+  <text x="715" y="162" text-anchor="middle" font-size="8" fill="#454545">get_weather("Beijing")</text>
+
+  <!-- Tool result back to LLM -->
+  <line x1="715" y1="175" x2="715" y2="250" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="725" y="210" text-anchor="start" font-size="8" fill="#6A6A6A">Return Result</text>
+
+  <!-- Result message -->
+  <rect x="655" y="255" width="120" height="40" rx="8" fill="#DDDDDD" stroke="#484848" stroke-width="1.5"/>
+  <text x="715" y="275" text-anchor="middle" font-size="9" fill="#353535">{"temp":28, "weather":"sunny"}</text>
+
+  <!-- Arrow from result back to LLM -->
+  <line x1="655" y1="260" x2="380" y2="200" stroke="#404040" stroke-width="1.5" marker-end="url(#arr2)" stroke-dasharray="6,3"/>
+  <text x="520" y="215" text-anchor="middle" font-size="8" fill="#404040">Result fed back to LLM</text>
+
+  <!-- No tool call path -->
+  <text x="520" y="198" text-anchor="middle" font-size="9" fill="#404040" font-weight="700">No</text>
+  <line x1="520" y1="180" x2="520" y2="260" stroke="#4E4E4E" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="520" y1="260" x2="135" y2="260" stroke="#4E4E4E" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="135" y1="260" x2="100" y2="185" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arr2)" stroke-dasharray="4,4"/>
+  <text x="330" y="275" text-anchor="middle" font-size="9" fill="#6A6A6A">Direct reply to user</text>
+
+  <!-- Loop arrow -->
+  <path d="M 285 185 Q 285 350 285 185" fill="none" stroke="#4E4E4E" stroke-width="1.5" stroke-dasharray="3,3"/>
+  
+  <!-- Example ReAct flow -->
+  <rect x="30" y="320" width="740" height="170" rx="10" fill="#FFFFFF" stroke="#C8C8C8" stroke-width="1"/>
+  <text x="400" y="342" text-anchor="middle" font-size="12" font-weight="700" fill="#1A1A1A">ReAct Loop Example [Yao et al., 2023]</text>
+  
+  <text x="50" y="368" font-size="10" fill="#2D2D2D" font-weight="700">Think 1:</text>
+  <text x="100" y="368" font-size="10" fill="#3D3D3D">User asks Beijing weather. I need to call weather tool.</text>
+  
+  <text x="50" y="390" font-size="10" fill="#303030" font-weight="700">Act 1:</text>
+  <text x="100" y="390" font-size="10" fill="#3D3D3D">get_weather(city="Beijing")</text>
+  
+  <text x="50" y="412" font-size="10" fill="#353535" font-weight="700">Observe 1:</text>
+  <text x="100" y="412" font-size="10" fill="#3D3D3D">{"temperature": 28, "weather": "sunny", "humidity": 45}</text>
+  
+  <text x="50" y="434" font-size="10" fill="#2D2D2D" font-weight="700">Think 2:</text>
+  <text x="100" y="434" font-size="10" fill="#3D3D3D">Got weather data, can reply to user directly.</text>
+  
+  <text x="50" y="456" font-size="10" fill="#404040" font-weight="700">Reply:</text>
+  <text x="100" y="456" font-size="10" fill="#3D3D3D">Beijing is sunny today, temperature 28°C, humidity 45%. Good for outdoor activities.</text>
+  
+  <text x="50" y="478" font-size="9" fill="#909090">Each loop: Think → Act → Observe, until task complete</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4E4E4E"/>
+    </marker>
+    
+    
+    
+    
+  </defs>
+  
+  <text x="450" y="35" text-anchor="middle" font-size="18" font-weight="700" fill="#2D2D2D">LLMAP Knowledge Map: From Chat to Agent</text>
+  
+  <rect x="30" y="60" width="190" height="140" rx="12" fill="url(#grad1)" stroke="#4A4A4A" stroke-width="2"/>
+  <text x="125" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#2D2D2D">Part I</text>
+  <text x="125" y="105" text-anchor="middle" font-size="12" fill="#2D2D2D">Chatting with LLM</text>
+  <text x="125" y="128" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 1 Prompt Engineering</text>
+  <text x="125" y="148" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 2 API Calls</text>
+  <text x="125" y="168" text-anchor="middle" font-size="10" fill="#6A6A6A">Learn to Drive 🚗</text>
+  
+  <rect x="260" y="60" width="380" height="140" rx="12" fill="url(#grad2)" stroke="#5D5D60" stroke-width="2"/>
+  <text x="450" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#3D3D3D">Part II</text>
+  <text x="450" y="105" text-anchor="middle" font-size="12" fill="#3D3D3D">Inside the LLM</text>
+  <text x="360" y="128" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 3 Tokens &amp; Tokenization</text>
+  <text x="360" y="148" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 4 Training Data</text>
+  <text x="360" y="168" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 5 Transformer</text>
+  <text x="540" y="128" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 6 Self-Attention</text>
+  <text x="540" y="148" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 7 Multi-Head Attention</text>
+  <text x="540" y="168" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 8 KV Cache</text>
+  <text x="450" y="192" text-anchor="middle" font-size="10" fill="#6A6A6A">Open the Hood 🔧</text>
+  
+  <rect x="680" y="60" width="190" height="185" rx="12" fill="url(#grad3)" stroke="#585858" stroke-width="2"/>
+  <text x="775" y="85" text-anchor="middle" font-size="14" font-weight="700" fill="#303030">Part III</text>
+  <text x="775" y="105" text-anchor="middle" font-size="12" fill="#303030">Making LLM Act</text>
+  <text x="775" y="128" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 11 Agent Loop</text>
+  <text x="775" y="148" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 12 Reasoning &amp; Planning</text>
+  <text x="775" y="168" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 13 MCP Protocol</text>
+  <text x="775" y="188" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 14 Skill Systems</text>
+  <text x="775" y="208" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 15-17 Memory / Sub-Agents</text>
+  <text x="775" y="232" text-anchor="middle" font-size="10" fill="#6A6A6A">Let It Drive Itself 🏎️</text>
+  
+  <rect x="30" y="220" width="610" height="80" rx="12" fill="url(#grad4)" stroke="#5D5D5D" stroke-width="2"/>
+  <text x="335" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#353535">Part IV: Running It Reliably</text>
+  <text x="170" y="275" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 18 Context Engineering</text>
+  <text x="335" y="275" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 19 Harness Engineering</text>
+  <text x="500" y="275" text-anchor="middle" font-size="11" fill="#3D3D3D">Ch 20 Frontiers &amp; Outlook</text>
+  
+  <line x1="220" y1="130" x2="260" y2="130" stroke="#4E4E4E" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="640" y1="130" x2="680" y2="130" stroke="#4E4E4E" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="200" x2="450" y2="220" stroke="#4E4E4E" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="775" y1="245" x2="775" y2="320" stroke="#4E4E4E" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+  <line x1="775" y1="320" x2="640" y2="280" stroke="#4E4E4E" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+  
+  <rect x="305" y="310" width="360" height="70" rx="8" fill="#F8F8F8" stroke="#C8C8C8" stroke-width="1"/>
+  <text x="485" y="335" text-anchor="middle" font-size="11" fill="#6A6A6A">Reading path: Drive (Ch 1-2) → Look under the hood (Ch 3-10) → Self-drive (Ch 11-17) → Maintenance (Ch 18-20)</text>
+  <text x="485" y="355" text-anchor="middle" font-size="10" fill="#909090">Ch 3-10 can be read independently after Ch 11; Ch 9-10 can be read in any order after Ch 5</text>
+  <text x="485" y="370" text-anchor="middle" font-size="10" fill="#909090">Sources: Textbook design references the technical lineage of [Vaswani et al., 2017] [Brown et al., 2020] [Yao et al., 2023]</text>
+</svg>

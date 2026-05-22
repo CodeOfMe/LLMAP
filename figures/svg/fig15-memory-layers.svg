@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="780" height="400" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Agent Memory Layer Architecture</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">Data source: [Packer et al., 2023] [Rasmussen et al., 2025]</text>
+  
+  <!-- Layer 1: Working Memory -->
+  <rect x="200" y="80" width="400" height="55" rx="10" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="2"/>
+  <text x="400" y="102" text-anchor="middle" font-size="13" fill="#2D2D2D" font-weight="700">Working Memory</text>
+  <text x="400" y="120" text-anchor="middle" font-size="9" fill="#4A4A4A">Current dialog context · 4K-8K tokens · Millisecond access</text>
+  
+  <line x1="400" y1="135" x2="400" y2="155" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Layer 2: Short-term Memory -->
+  <rect x="180" y="155" width="440" height="55" rx="10" fill="#D8D8D8" stroke="#555555" stroke-width="2"/>
+  <text x="400" y="177" text-anchor="middle" font-size="13" fill="#3A3A3A" font-weight="700">Short-Term Memory</text>
+  <text x="400" y="195" text-anchor="middle" font-size="9" fill="#404040">Recent dialog history · Vector store · Cosine similarity retrieval</text>
+  
+  <line x1="400" y1="210" x2="400" y2="230" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Layer 3: Episodic Memory -->
+  <rect x="160" y="230" width="480" height="55" rx="10" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="2"/>
+  <text x="400" y="252" text-anchor="middle" font-size="13" fill="#353535" font-weight="700">Episodic Memory</text>
+  <text x="400" y="270" text-anchor="middle" font-size="9" fill="#484848">Key event records · Timestamp index · Lessons learned</text>
+  
+  <line x1="400" y1="285" x2="400" y2="305" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Layer 4: Semantic Memory -->
+  <rect x="140" y="305" width="520" height="55" rx="10" fill="#E5E5E5" stroke="#6D6D6D" stroke-width="2"/>
+  <text x="400" y="327" text-anchor="middle" font-size="13" fill="#505050" font-weight="700">Semantic Memory</text>
+  <text x="400" y="345" text-anchor="middle" font-size="9" fill="#3D3D3D">Long-term knowledge · Skill descriptions · Factual info · Knowledge Graph</text>
+  
+  <!-- Side annotations -->
+  <!-- Access speed -->
+  <text x="680" y="107" font-size="9" fill="#6A6A6A">~1ms</text>
+  <text x="680" y="182" font-size="9" fill="#6A6A6A">~10ms</text>
+  <text x="680" y="257" font-size="9" fill="#6A6A6A">~100ms</text>
+  <text x="680" y="332" font-size="9" fill="#6A6A6A">~1s</text>
+  
+  <!-- Capacity -->
+  <text x="60" y="107" text-anchor="end" font-size="9" fill="#6A6A6A">KB</text>
+  <text x="60" y="182" text-anchor="end" font-size="9" fill="#6A6A6A">MB</text>
+  <text x="60" y="257" text-anchor="end" font-size="9" fill="#6A6A6A">GB</text>
+  <text x="60" y="332" text-anchor="end" font-size="9" fill="#6A6A6A">TB</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4E4E4E"/>
+    </marker>
+  </defs>
+</svg>

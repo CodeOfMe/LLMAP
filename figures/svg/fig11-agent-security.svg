@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="780" height="360" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Agent Loop Security Threat Model</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">数据来源：[Greshake et al., 2023]</text>
+  
+  <!-- User Input -->
+  <rect x="50" y="90" width="150" height="60" rx="8" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="1.5"/>
+  <text x="125" y="115" text-anchor="middle" font-size="11" fill="#2D2D2D" font-weight="600">User Input</text>
+  <text x="125" y="135" text-anchor="middle" font-size="8" fill="#4A4A4A">May contain malicious instructions</text>
+  
+  <!-- Agent Loop -->
+  <rect x="280" y="80" width="240" height="220" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+  <text x="400" y="105" text-anchor="middle" font-size="12" fill="#1A1A1A" font-weight="700">Agent Loop</text>
+  
+  <rect x="300" y="115" width="200" height="40" rx="6" fill="#E8E8E0" stroke="#5D5D5D"/>
+  <text x="400" y="140" text-anchor="middle" font-size="10" fill="#353535">Thought → Action</text>
+  
+  <rect x="300" y="165" width="200" height="40" rx="6" fill="#D8D8D8" stroke="#555555"/>
+  <text x="400" y="190" text-anchor="middle" font-size="10" fill="#3A3A3A">Tool Execution</text>
+  
+  <rect x="300" y="215" width="200" height="40" rx="6" fill="#DCDCDC" stroke="#4D4D4D"/>
+  <text x="400" y="240" text-anchor="middle" font-size="10" fill="#2D2D2D">Observation → Repeat</text>
+  
+  <!-- Output -->
+  <rect x="600" y="90" width="150" height="60" rx="8" fill="#D8D8D8" stroke="#555555" stroke-width="1.5"/>
+  <text x="675" y="115" text-anchor="middle" font-size="11" fill="#3A3A3A" font-weight="600">Final Output</text>
+  <text x="675" y="135" text-anchor="middle" font-size="8" fill="#404040">May leak sensitive information</text>
+  
+  <!-- Attack arrows -->
+  <!-- Direct injection -->
+  <line x1="200" y1="120" x2="280" y2="120" stroke="#4D4D4D" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="240" y="110" text-anchor="middle" font-size="8" fill="#404040" font-weight="600">Direct Injection</text>
+  
+  <!-- Indirect injection via tool -->
+  <rect x="600" y="200" width="150" height="60" rx="8" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1.5"/>
+  <text x="675" y="225" text-anchor="middle" font-size="11" fill="#353535" font-weight="600">Tool Return Data</text>
+  <text x="675" y="245" text-anchor="middle" font-size="8" fill="#484848">May contain injection</text>
+  
+  <line x1="600" y1="230" x2="520" y2="200" stroke="#5D5D5D" stroke-width="2" marker-end="url(#arrow-orange)"/>
+  <text x="570" y="210" text-anchor="middle" font-size="8" fill="#505050" font-weight="600">Indirect Injection</text>
+  
+  <!-- Data exfiltration -->
+  <line x1="520" y1="120" x2="600" y2="120" stroke="#6D6D6D" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#arrow-purple)"/>
+  <text x="560" y="110" text-anchor="middle" font-size="8" fill="#505050" font-weight="600">Data Leakage</text>
+  
+  <!-- Defense box -->
+  <rect x="50" y="270" width="700" height="70" rx="10" fill="#F0F0F0" stroke="#8E8E8E" stroke-width="1.5"/>
+  <text x="400" y="292" text-anchor="middle" font-size="11" fill="#3A3A3A" font-weight="700">Three-Layer Defense</text>
+  <text x="180" y="315" text-anchor="middle" font-size="9" fill="#404040">Input Filter: Detect malicious instruction patterns</text>
+  <text x="400" y="315" text-anchor="middle" font-size="9" fill="#404040">Output Filter: Block sensitive information leakage</text>
+  <text x="620" y="315" text-anchor="middle" font-size="9" fill="#404040">Prompt Hardening: System prompt security constraints</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4D4D4D"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5D5D5D"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6D6D6D"/>
+    </marker>
+  </defs>
+</svg>

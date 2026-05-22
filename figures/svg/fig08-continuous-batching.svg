@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="800" height="460" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="410" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Static Batching vs Continuous Batching</text>
+  <text x="410" y="60" text-anchor="middle" font-size="10" fill="#909090">Source: [Kwon et al., 2023] [Yu et al., 2022]</text>
+  
+  <rect x="20" y="80" width="380" height="200" rx="10" fill="#F0F0F0" stroke="#9A9A9A" stroke-width="1.5"/>
+  <text x="210" y="105" text-anchor="middle" font-size="13" font-weight="700" fill="#2D2D2D">Static Batching</text>
+  <text x="210" y="120" text-anchor="middle" font-size="9" fill="#353535">All requests start together; must wait for the slowest before next batch</text>
+  
+  <text x="30" y="145" font-size="9" fill="#4E4E4E" font-weight="600">GPU 0:</text>
+  <rect x="90" y="135" width="280" height="18" rx="3" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="0.5"/>
+  <text x="230" y="148" text-anchor="middle" font-size="8" fill="#2D2D2D">Request 1 (100 tokens)</text>
+  
+  <text x="30" y="170" font-size="9" fill="#4E4E4E" font-weight="600">GPU 1:</text>
+  <rect x="90" y="160" width="140" height="18" rx="3" fill="#D8D8D8" stroke="#555555" stroke-width="0.5"/>
+  <text x="160" y="173" text-anchor="middle" font-size="8" fill="#3A3A3A">Request 2 (50 tokens)</text>
+  
+  <text x="30" y="195" font-size="9" fill="#4E4E4E" font-weight="600">GPU 2:</text>
+  <rect x="90" y="185" width="200" height="18" rx="3" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="0.5"/>
+  <text x="190" y="198" text-anchor="middle" font-size="8" fill="#353535">Request 3 (70 tokens)</text>
+  
+  <text x="30" y="220" font-size="9" fill="#4E4E4E" font-weight="600">GPU 3:</text>
+  <rect x="90" y="210" width="310" height="18" rx="3" fill="#E5E5E5" stroke="#6D6D6D" stroke-width="0.5"/>
+  <text x="245" y="223" text-anchor="middle" font-size="8" fill="#505050">Request 4 (110 tokens)</text>
+  
+  <rect x="230" y="160" width="140" height="18" rx="3" fill="#DCDCDC" stroke="#4D4D4D" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="300" y="173" text-anchor="middle" font-size="7" fill="#404040">Idle Wait</text>
+  <rect x="290" y="185" width="80" height="18" rx="3" fill="#DCDCDC" stroke="#4D4D4D" stroke-width="0.5" stroke-dasharray="3,2"/>
+  <text x="330" y="198" text-anchor="middle" font-size="7" fill="#404040">Idle</text>
+  
+  <text x="210" y="265" text-anchor="middle" font-size="10" fill="#404040" font-weight="600">GPU Utilization: ~50% · Throughput: 1x</text>
+  
+  <rect x="420" y="80" width="380" height="200" rx="10" fill="#F0F0F0" stroke="#8E8E8E" stroke-width="1.5"/>
+  <text x="610" y="105" text-anchor="middle" font-size="13" font-weight="700" fill="#3A3A3A">Continuous Batching</text>
+  <text x="610" y="120" text-anchor="middle" font-size="9" fill="#404040">Completed requests release immediately, new ones join instantly, GPU stays busy</text>
+  
+  <text x="430" y="145" font-size="9" fill="#4E4E4E" font-weight="600">GPU 0:</text>
+  <rect x="490" y="135" width="180" height="18" rx="3" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="0.5"/>
+  <text x="580" y="148" text-anchor="middle" font-size="8" fill="#2D2D2D">Request 1</text>
+  <rect x="670" y="135" width="100" height="18" rx="3" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="0.5"/>
+  <text x="720" y="148" text-anchor="middle" font-size="8" fill="#2D2D2D">Request 5</text>
+  
+  <text x="430" y="170" font-size="9" fill="#4E4E4E" font-weight="600">GPU 1:</text>
+  <rect x="490" y="160" width="100" height="18" rx="3" fill="#D8D8D8" stroke="#555555" stroke-width="0.5"/>
+  <text x="540" y="173" text-anchor="middle" font-size="8" fill="#3A3A3A">Request 2</text>
+  <rect x="590" y="160" width="100" height="18" rx="3" fill="#D8D8D8" stroke="#555555" stroke-width="0.5"/>
+  <text x="640" y="173" text-anchor="middle" font-size="8" fill="#3A3A3A">Request 6</text>
+  <rect x="690" y="160" width="80" height="18" rx="3" fill="#D8D8D8" stroke="#555555" stroke-width="0.5"/>
+  <text x="730" y="173" text-anchor="middle" font-size="8" fill="#3A3A3A">Request 8</text>
+  
+  <text x="430" y="195" font-size="9" fill="#4E4E4E" font-weight="600">GPU 2:</text>
+  <rect x="490" y="185" width="140" height="18" rx="3" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="0.5"/>
+  <text x="560" y="198" text-anchor="middle" font-size="8" fill="#353535">Request 3</text>
+  <rect x="630" y="185" width="140" height="18" rx="3" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="0.5"/>
+  <text x="700" y="198" text-anchor="middle" font-size="8" fill="#353535">Request 7</text>
+  
+  <text x="430" y="220" font-size="9" fill="#4E4E4E" font-weight="600">GPU 3:</text>
+  <rect x="490" y="210" width="280" height="18" rx="3" fill="#E5E5E5" stroke="#6D6D6D" stroke-width="0.5"/>
+  <text x="630" y="223" text-anchor="middle" font-size="8" fill="#505050">Request 4</text>
+  
+  <text x="610" y="265" text-anchor="middle" font-size="10" fill="#4D4D4D" font-weight="600">GPU Utilization: &gt;90% · Throughput: 10-20x</text>
+  
+  <rect x="20" y="300" width="780" height="150" rx="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="410" y="325" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">Key Differences</text>
+  
+  <line x1="20" y1="340" x2="800" y2="340" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="210" y="358" text-anchor="middle" font-size="10" font-weight="600" fill="#4E4E4E">Metric</text>
+  <text x="410" y="358" text-anchor="middle" font-size="10" font-weight="600" fill="#404040">Static Batching</text>
+  <text x="610" y="358" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4D4D">Continuous Batching</text>
+  
+  <line x1="20" y1="370" x2="800" y2="370" stroke="#F0F0F0" stroke-width="0.5"/>
+  <text x="210" y="385" text-anchor="middle" font-size="9" fill="#4E4E4E">GPU Utilization</text>
+  <text x="410" y="385" text-anchor="middle" font-size="9" fill="#404040">~50%</text>
+  <text x="610" y="385" text-anchor="middle" font-size="9" fill="#4D4D4D">&gt;90%</text>
+  
+  <line x1="20" y1="395" x2="800" y2="395" stroke="#F0F0F0" stroke-width="0.5"/>
+  <text x="210" y="410" text-anchor="middle" font-size="9" fill="#4E4E4E">Throughput (relative)</text>
+  <text x="410" y="410" text-anchor="middle" font-size="9" fill="#404040">1x (baseline)</text>
+  <text x="610" y="410" text-anchor="middle" font-size="9" fill="#4D4D4D">10-20x</text>
+  
+  <line x1="20" y1="420" x2="800" y2="420" stroke="#F0F0F0" stroke-width="0.5"/>
+  <text x="210" y="435" text-anchor="middle" font-size="9" fill="#4E4E4E">Idle Wait</text>
+  <text x="410" y="435" text-anchor="middle" font-size="9" fill="#404040">Severe (waiting for slowest)</text>
+  <text x="610" y="435" text-anchor="middle" font-size="9" fill="#4D4D4D">Nearly zero</text>
+</svg>

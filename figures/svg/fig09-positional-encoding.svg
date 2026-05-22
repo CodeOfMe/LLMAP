@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="780" height="380" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Positional Encoding Comparison</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">Reference: [Su et al., 2024] [Press et al., 2022] [Chen et al., 2023]</text>
+  
+  <!-- Absolute -->
+  <rect x="30" y="80" width="230" height="290" rx="10" fill="#F0F0F0" stroke="#9A9A9A" stroke-width="1.5"/>
+  <text x="145" y="105" text-anchor="middle" font-size="12" fill="#2D2D2D" font-weight="700">Absolute Positional Encoding</text>
+  
+  <rect x="45" y="120" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#E2E2E2"/>
+  <text x="145" y="140" text-anchor="middle" font-size="9" fill="#4E4E4E">h = x + PE(pos)</text>
+  <text x="145" y="158" text-anchor="middle" font-size="9" fill="#4E4E4E">Sinusoidal / Learnable vectors</text>
+  <text x="145" y="170" text-anchor="middle" font-size="9" fill="#4E4E4E">Added directly to embeddings</text>
+  
+  <text x="145" y="205" text-anchor="middle" font-size="9" fill="#6A6A6A">✓ Simple implementation</text>
+  <text x="145" y="225" text-anchor="middle" font-size="9" fill="#6A6A6A">✗ Cannot extrapolate to longer sequences</text>
+  <text x="145" y="245" text-anchor="middle" font-size="9" fill="#6A6A6A">✗ Performance drops beyond training length</text>
+  <text x="145" y="270" text-anchor="middle" font-size="9" fill="#6A6A6A">Used by: Original Transformer</text>
+  <text x="145" y="290" text-anchor="middle" font-size="9" fill="#6A6A6A">BERT, T5</text>
+  <text x="145" y="320" text-anchor="middle" font-size="10" fill="#404040" font-weight="600">Extrapolation: Poor</text>
+  <text x="145" y="340" text-anchor="middle" font-size="10" fill="#404040" font-weight="600">Current Status: Deprecated</text>
+  
+  <!-- RoPE -->
+  <rect x="285" y="80" width="230" height="290" rx="10" fill="#D8D8D8" stroke="#8E8E8E" stroke-width="1.5"/>
+  <text x="400" y="105" text-anchor="middle" font-size="12" fill="#3A3A3A" font-weight="700">RoPE (Rotary Positional Encoding)</text>
+  
+  <rect x="300" y="120" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#E2E2E2"/>
+  <text x="400" y="140" text-anchor="middle" font-size="9" fill="#4E4E4E">Rotate Query and Key vectors</text>
+  <text x="400" y="158" text-anchor="middle" font-size="9" fill="#4E4E4E">注意力 = f(|pos_i - pos_j|)</text>
+  <text x="400" y="170" text-anchor="middle" font-size="9" fill="#4E4E4E">Depends only on relative position difference</text>
+  
+  <text x="400" y="205" text-anchor="middle" font-size="9" fill="#6A6A6A">✓ Naturally supports relative position</text>
+  <text x="400" y="225" text-anchor="middle" font-size="9" fill="#6A6A6A">✓ Good extrapolation ability</text>
+  <text x="400" y="245" text-anchor="middle" font-size="9" fill="#6A6A6A">✓ Linear attention compatible</text>
+  <text x="400" y="270" text-anchor="middle" font-size="9" fill="#6A6A6A">Used by: LLaMA 2/3</text>
+  <text x="400" y="290" text-anchor="middle" font-size="9" fill="#6A6A6A">Qwen, Mistral</text>
+  <text x="400" y="320" text-anchor="middle" font-size="10" fill="#4D4D4D" font-weight="600">Extrapolation: Good</text>
+  <text x="400" y="340" text-anchor="middle" font-size="10" fill="#4D4D4D" font-weight="600">Current Status: Mainstream</text>
+  
+  <!-- ALiBi -->
+  <rect x="540" y="80" width="230" height="290" rx="10" fill="#F0F0F0" stroke="#8A8A8A" stroke-width="1.5"/>
+  <text x="655" y="105" text-anchor="middle" font-size="12" fill="#2D2D2D" font-weight="700">ALiBi (Linear Bias)</text>
+  
+  <rect x="555" y="120" width="200" height="60" rx="6" fill="#FFFFFF" stroke="#E2E2E2"/>
+  <text x="655" y="140" text-anchor="middle" font-size="9" fill="#4E4E4E">注意力分数 += m × (j - i)</text>
+  <text x="655" y="158" text-anchor="middle" font-size="9" fill="#4E4E4E">Does not modify embeddings</text>
+  <text x="655" y="170" text-anchor="middle" font-size="9" fill="#4E4E4E">Added directly to attention matrix</text>
+  
+  <text x="655" y="205" text-anchor="middle" font-size="9" fill="#6A6A6A">✓ Train 2K, infer 64K</text>
+  <text x="655" y="225" text-anchor="middle" font-size="9" fill="#6A6A6A">✓ Best extrapolation ability</text>
+  <text x="655" y="245" text-anchor="middle" font-size="9" fill="#6A6A6A">△ Requires tuning slope m</text>
+  <text x="655" y="270" text-anchor="middle" font-size="9" fill="#6A6A6A">Used by: MPT</text>
+  <text x="655" y="290" text-anchor="middle" font-size="9" fill="#6A6A6A">BLOOM</text>
+  <text x="655" y="320" text-anchor="middle" font-size="10" fill="#3D3D3D" font-weight="600">Extrapolation: Best</text>
+  <text x="655" y="340" text-anchor="middle" font-size="10" fill="#3D3D3D" font-weight="600">Current Status: Niche</text>
+</svg>

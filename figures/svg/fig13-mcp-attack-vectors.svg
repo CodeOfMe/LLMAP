@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="780" height="380" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">MCP Security Threat Model</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">数据来源：[Zhou et al., 2026] [Greshake et al., 2023]</text>
+  
+  <!-- Central MCP Server -->
+  <rect x="320" y="160" width="160" height="80" rx="12" fill="#2D2D2D" stroke="#1A1A1A" stroke-width="2"/>
+  <text x="400" y="190" text-anchor="middle" font-size="13" fill="#F8F8F8" font-weight="700">MCP Server</text>
+  <text x="400" y="210" text-anchor="middle" font-size="9" fill="#909090">Tools · Resources · Prompts</text>
+  
+  <!-- Client (Agent) -->
+  <rect x="80" y="160" width="140" height="80" rx="12" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="1.5"/>
+  <text x="150" y="190" text-anchor="middle" font-size="12" fill="#2D2D2D" font-weight="600">Agent (Client)</text>
+  <text x="150" y="210" text-anchor="middle" font-size="9" fill="#4A4A4A">Initiate tool calls</text>
+  
+  <!-- Connection -->
+  <line x1="220" y1="200" x2="320" y2="200" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="270" y="190" text-anchor="middle" font-size="8" fill="#6A6A6A">JSON-RPC</text>
+  
+  <!-- Attack vectors -->
+  <!-- 1. Prompt Injection from user -->
+  <rect x="80" y="80" width="140" height="55" rx="8" fill="#DCDCDC" stroke="#4D4D4D" stroke-width="1.5"/>
+  <text x="150" y="100" text-anchor="middle" font-size="10" fill="#2D2D2D" font-weight="600">① Prompt Injection</text>
+  <text x="150" y="118" text-anchor="middle" font-size="8" fill="#353535">User inputs malicious instructions</text>
+  <path d="M 150 135 Q 150 150 150 160" fill="none" stroke="#4D4D4D" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow-red)"/>
+  
+  <!-- 2. Tool hijacking -->
+  <rect x="580" y="80" width="140" height="55" rx="8" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1.5"/>
+  <text x="650" y="100" text-anchor="middle" font-size="10" fill="#353535" font-weight="600">② Tool Hijacking</text>
+  <text x="650" y="118" text-anchor="middle" font-size="8" fill="#484848">Forged tool return data</text>
+  <path d="M 650 135 Q 650 150 480 180" fill="none" stroke="#5D5D5D" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow-orange)"/>
+  
+  <!-- 3. Data exfiltration -->
+  <rect x="580" y="280" width="140" height="55" rx="8" fill="#E5E5E5" stroke="#6D6D6D" stroke-width="1.5"/>
+  <text x="650" y="300" text-anchor="middle" font-size="10" fill="#505050" font-weight="600">③ Data Leakage</text>
+  <text x="650" y="318" text-anchor="middle" font-size="8" fill="#3D3D3D">Tool returns sensitive info</text>
+  <path d="M 480 220 Q 650 250 650 280" fill="none" stroke="#6D6D6D" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow-purple)"/>
+  
+  <!-- 4. Resource poisoning -->
+  <rect x="80" y="280" width="140" height="55" rx="8" fill="#D8D8D8" stroke="#555555" stroke-width="1.5"/>
+  <text x="150" y="300" text-anchor="middle" font-size="10" fill="#3A3A3A" font-weight="600">④ Resource Poisoning</text>
+  <text x="150" y="318" text-anchor="middle" font-size="8" fill="#404040">Inject false context resources</text>
+  <path d="M 150 280 Q 150 250 320 220" fill="none" stroke="#555555" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow-green)"/>
+  
+  <!-- Markers -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4E4E4E"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4D4D4D"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#5D5D5D"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6D6D6D"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#555555"/>
+    </marker>
+  </defs>
+</svg>

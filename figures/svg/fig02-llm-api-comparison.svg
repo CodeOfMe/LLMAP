@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="800" height="420" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="410" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Seamless Switch Between Local and Cloud APIs</text>
+  <text x="410" y="60" text-anchor="middle" font-size="10" fill="#909090">Source: [Ollama, 2025] [OpenAI, 2024]</text>
+  
+  <rect x="30" y="80" width="370" height="330" rx="12" fill="#F0F0F0" stroke="#8E8E8E" stroke-width="2"/>
+  <text x="215" y="108" text-anchor="middle" font-size="14" fill="#3A3A3A" font-weight="700">Local Deployment</text>
+  <text x="215" y="126" text-anchor="middle" font-size="9" fill="#4D4D4D">Zero Cost · Data Private · No Rate Limit</text>
+  
+  <rect x="50" y="145" width="330" height="50" rx="8" fill="#FFFFFF" stroke="#E0E0E0"/>
+  <text x="215" y="164" text-anchor="middle" font-size="10" fill="#4E4E4E" font-weight="600">base_url = "http://localhost:11434/v1"</text>
+  <text x="215" y="182" text-anchor="middle" font-size="9" fill="#6A6A6A">api_key = "ollama" · model = "qwen3.5:2b"</text>
+  
+  <rect x="50" y="210" width="155" height="170" rx="8" fill="#D8D8D8" stroke="#8E8E8E"/>
+  <text x="127" y="232" text-anchor="middle" font-size="10" fill="#3A3A3A" font-weight="600">Pros</text>
+  <text x="127" y="254" text-anchor="middle" font-size="9" fill="#404040">✓ Free experimentation</text>
+  <text x="127" y="274" text-anchor="middle" font-size="9" fill="#404040">✓ Data stays local</text>
+  <text x="127" y="294" text-anchor="middle" font-size="9" fill="#404040">✓ No rate limits</text>
+  <text x="127" y="314" text-anchor="middle" font-size="9" fill="#404040">✓ Full control</text>
+  <text x="127" y="334" text-anchor="middle" font-size="9" fill="#404040">△ Limited capability</text>
+  <text x="127" y="354" text-anchor="middle" font-size="9" fill="#404040">△ Speed depends on hardware</text>
+  
+  <rect x="225" y="210" width="155" height="170" rx="8" fill="#DCDCDC" stroke="#9A9A9A"/>
+  <text x="302" y="232" text-anchor="middle" font-size="10" fill="#2D2D2D" font-weight="600">Cons</text>
+  <text x="302" y="254" text-anchor="middle" font-size="9" fill="#353535">△ Requires GPU</text>
+  <text x="302" y="274" text-anchor="middle" font-size="9" fill="#353535">△ Limited concurrency</text>
+  <text x="302" y="294" text-anchor="middle" font-size="9" fill="#353535">△ Limited model selection</text>
+  <text x="302" y="314" text-anchor="middle" font-size="9" fill="#353535">△ No SLA</text>
+  <text x="302" y="334" text-anchor="middle" font-size="9" fill="#353535">△ High maintenance</text>
+  <text x="302" y="354" text-anchor="middle" font-size="9" fill="#353535">△ Not for production</text>
+  
+  <rect x="420" y="80" width="370" height="330" rx="12" fill="#F0F0F0" stroke="#8A8A8A" stroke-width="2"/>
+  <text x="605" y="108" text-anchor="middle" font-size="14" fill="#2D2D2D" font-weight="700">Cloud API</text>
+  <text x="605" y="126" text-anchor="middle" font-size="9" fill="#4A4A4A">Pay-per-use · Best Performance · Rate Limited</text>
+  
+  <rect x="440" y="145" width="330" height="50" rx="8" fill="#FFFFFF" stroke="#E0E0E0"/>
+  <text x="605" y="164" text-anchor="middle" font-size="10" fill="#4E4E4E" font-weight="600">base_url = "https://api.openai.com/v1"</text>
+  <text x="605" y="182" text-anchor="middle" font-size="9" fill="#6A6A6A">api_key = "sk-..." · model = "gpt-4o"</text>
+  
+  <rect x="440" y="210" width="155" height="170" rx="8" fill="#D8D8D8" stroke="#8A8A8A"/>
+  <text x="517" y="232" text-anchor="middle" font-size="10" fill="#2D2D2D" font-weight="600">Pros</text>
+  <text x="517" y="254" text-anchor="middle" font-size="9" fill="#353535">✓ Best performance</text>
+  <text x="517" y="274" text-anchor="middle" font-size="9" fill="#353535">✓ No GPU needed</text>
+  <text x="517" y="294" text-anchor="middle" font-size="9" fill="#353535">✓ High concurrency SLA</text>
+  <text x="517" y="314" text-anchor="middle" font-size="9" fill="#353535">✓ More model choices</text>
+  <text x="517" y="334" text-anchor="middle" font-size="9" fill="#353535">△ Pay per token</text>
+  <text x="517" y="354" text-anchor="middle" font-size="9" fill="#353535">△ Data sent to cloud</text>
+  
+  <rect x="615" y="210" width="155" height="170" rx="8" fill="#E8E8E0" stroke="#909088"/>
+  <text x="692" y="232" text-anchor="middle" font-size="10" fill="#353535" font-weight="600">Cons</text>
+  <text x="692" y="254" text-anchor="middle" font-size="9" fill="#484848">△ Cost scales with usage</text>
+  <text x="692" y="274" text-anchor="middle" font-size="9" fill="#484848">△ Rate limits</text>
+  <text x="692" y="294" text-anchor="middle" font-size="9" fill="#484848">△ Parameter limits</text>
+  <text x="692" y="314" text-anchor="middle" font-size="9" fill="#484848">△ Network dependent</text>
+  <text x="692" y="334" text-anchor="middle" font-size="9" fill="#484848">△ Not customizable</text>
+  <text x="692" y="354" text-anchor="middle" font-size="9" fill="#484848">△ Privacy risk</text>
+  
+  <rect x="385" y="230" width="50" height="50" rx="25" fill="#F8F8F8" stroke="#909090" stroke-width="1.5"/>
+  <text x="410" y="250" text-anchor="middle" font-size="8" fill="#4E4E4E" font-weight="700">Just</text>
+  <text x="410" y="262" text-anchor="middle" font-size="8" fill="#4E4E4E" font-weight="700">2 lines</text>
+</svg>

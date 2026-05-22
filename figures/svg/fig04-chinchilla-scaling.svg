@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="800" height="420" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="410" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Chinchilla Scaling Laws: Optimal Ratio of Parameters to Training Tokens</text>
+  <text x="410" y="60" text-anchor="middle" font-size="10" fill="#909090">Source: [Hoffmann et al., 2022] [Dubey et al., 2024]</text>
+  
+  <line x1="120" y1="360" x2="740" y2="360" stroke="#909090" stroke-width="1.5"/>
+  <line x1="120" y1="100" x2="120" y2="360" stroke="#909090" stroke-width="1.5"/>
+  <text x="430" y="395" text-anchor="middle" font-size="11" fill="#4E4E4E" font-weight="600">Model Parameters (B)</text>
+  <text x="50" y="230" text-anchor="middle" font-size="11" fill="#4E4E4E" font-weight="600" transform="rotate(-90,50,230)">Training Tokens (B)</text>
+  
+  <line x1="120" y1="300" x2="740" y2="300" stroke="#E0E0E0" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="120" y1="240" x2="740" y2="240" stroke="#E0E0E0" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="120" y1="180" x2="740" y2="180" stroke="#E0E0E0" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="120" y1="120" x2="740" y2="120" stroke="#E0E0E0" stroke-width="0.5" stroke-dasharray="4,4"/>
+  
+  <text x="110" y="364" text-anchor="end" font-size="9" fill="#6A6A6A">0</text>
+  <text x="110" y="304" text-anchor="end" font-size="9" fill="#6A6A6A">5,000</text>
+  <text x="110" y="244" text-anchor="end" font-size="9" fill="#6A6A6A">10,000</text>
+  <text x="110" y="184" text-anchor="end" font-size="9" fill="#6A6A6A">15,000</text>
+  <text x="110" y="124" text-anchor="end" font-size="9" fill="#6A6A6A">20,000</text>
+  
+  <text x="120" y="378" text-anchor="middle" font-size="9" fill="#6A6A6A">0</text>
+  <text x="275" y="378" text-anchor="middle" font-size="9" fill="#6A6A6A">100</text>
+  <text x="430" y="378" text-anchor="middle" font-size="9" fill="#6A6A6A">200</text>
+  <text x="585" y="378" text-anchor="middle" font-size="9" fill="#6A6A6A">300</text>
+  <text x="740" y="378" text-anchor="middle" font-size="9" fill="#6A6A6A">400</text>
+  
+  <line x1="120" y1="360" x2="740" y2="116" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="650" y="135" font-size="10" fill="#3D3D3D" font-weight="600">Optimal ratio D ≈ 20N</text>
+  
+  <circle cx="180" cy="330" r="7" fill="#4D4D4D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="180" y="318" text-anchor="middle" font-size="8" fill="#404040" font-weight="600">LLaMA 1 7B</text>
+  <text x="180" y="348" text-anchor="middle" font-size="7" fill="#2D2D2D">1T / 7B</text>
+  
+  <circle cx="275" cy="300" r="7" fill="#4D4D4D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="275" y="288" text-anchor="middle" font-size="8" fill="#404040" font-weight="600">LLaMA 2 7B</text>
+  <text x="275" y="318" text-anchor="middle" font-size="7" fill="#2D2D2D">2T / 7B</text>
+  
+  <circle cx="430" cy="200" r="7" fill="#4D4D4D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="430" y="188" text-anchor="middle" font-size="8" fill="#404040" font-weight="600">LLaMA 2 70B</text>
+  <text x="430" y="218" text-anchor="middle" font-size="7" fill="#2D2D2D">2T / 70B</text>
+  
+  <circle cx="585" cy="140" r="7" fill="#5D5D5D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="585" y="128" text-anchor="middle" font-size="8" fill="#505050" font-weight="600">LLaMA 3 8B</text>
+  <text x="585" y="158" text-anchor="middle" font-size="7" fill="#353535">15T / 8B</text>
+  
+  <circle cx="680" cy="160" r="7" fill="#5D5D5D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="680" y="148" text-anchor="middle" font-size="8" fill="#505050" font-weight="600">LLaMA 3 70B</text>
+  <text x="680" y="178" text-anchor="middle" font-size="7" fill="#353535">15T / 70B</text>
+  
+  <rect x="580" y="260" width="210" height="80" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <circle cx="600" cy="280" r="4" fill="#4A4A4A"/>
+  <text x="610" y="284" font-size="9" fill="#4E4E4E">Chinchilla optimal ratio</text>
+  <circle cx="600" cy="300" r="4" fill="#4D4D4D"/>
+  <text x="610" y="304" font-size="9" fill="#4E4E4E">LLaMA 1/2 (Undertrained)</text>
+  <circle cx="600" cy="320" r="4" fill="#5D5D5D"/>
+  <text x="610" y="324" font-size="9" fill="#4E4E4E">LLaMA 3 (Near Optimal)</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="780" height="330" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Reasoning Method Spectrum: From Low Cost to High Reasoning Quality</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">数据来源：[Wei et al., 2022] [Wang et al., 2023] [Yao et al., 2023]</text>
+  
+  <!-- Spectrum bar -->
+  <rect x="80" y="90" width="640" height="60" rx="10" fill="url(#spectrum-grad)"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    
+  </defs>
+  
+  <!-- Method labels on spectrum -->
+  <text x="140" y="125" text-anchor="middle" font-size="12" fill="#1A1A1A" font-weight="700">Standard Prompting</text>
+  <text x="300" y="125" text-anchor="middle" font-size="12" fill="#1A1A1A" font-weight="700">CoT</text>
+  <text x="460" y="125" text-anchor="middle" font-size="12" fill="#1A1A1A" font-weight="700">Self-Consistency</text>
+  <text x="620" y="125" text-anchor="middle" font-size="12" fill="#1A1A1A" font-weight="700">ToT / Search</text>
+  
+  <!-- Cost axis -->
+  <text x="400" y="175" text-anchor="middle" font-size="11" fill="#4E4E4E" font-weight="600">Compute Cost →</text>
+  <line x1="80" y1="185" x2="720" y2="185" stroke="#909090" stroke-width="1"/>
+  <text x="80" y="200" font-size="9" fill="#6A6A6A">Low</text>
+  <text x="720" y="200" text-anchor="end" font-size="9" fill="#6A6A6A">High</text>
+  
+  <!-- Method details -->
+  <rect x="30" y="215" width="170" height="110" rx="8" fill="#D8D8D8" stroke="#8E8E8E" stroke-width="1"/>
+  <text x="115" y="235" text-anchor="middle" font-size="10" fill="#3A3A3A" font-weight="600">Standard Prompting</text>
+  <text x="115" y="252" text-anchor="middle" font-size="8" fill="#404040">Single generation, no reasoning</text>
+  <text x="115" y="268" text-anchor="middle" font-size="8" fill="#404040">GSM8K: 17.9%</text>
+  <text x="115" y="284" text-anchor="middle" font-size="8" fill="#404040">成本: 1x</text>
+  <text x="115" y="304" text-anchor="middle" font-size="8" fill="#404040">For: Simple classification</text>
+  
+  <rect x="220" y="215" width="170" height="110" rx="8" fill="#F4F4F4" stroke="#909088" stroke-width="1"/>
+  <text x="305" y="235" text-anchor="middle" font-size="10" fill="#3A3A3A" font-weight="600">CoT</text>
+  <text x="305" y="252" text-anchor="middle" font-size="8" fill="#484848">Single-Path Reasoning</text>
+  <text x="305" y="268" text-anchor="middle" font-size="8" fill="#484848">GSM8K: 56.9%</text>
+  <text x="305" y="284" text-anchor="middle" font-size="8" fill="#484848">成本: 1.5x</text>
+  <text x="305" y="304" text-anchor="middle" font-size="8" fill="#484848">For: Math reasoning</text>
+  
+  <rect x="410" y="215" width="170" height="110" rx="8" fill="#EAEAE5" stroke="#9A9A90" stroke-width="1"/>
+  <text x="495" y="235" text-anchor="middle" font-size="10" fill="#3D3D3D" font-weight="600">Self-Consistency</text>
+  <text x="495" y="252" text-anchor="middle" font-size="8" fill="#4A4A4A">Multi-Path Voting</text>
+  <text x="495" y="268" text-anchor="middle" font-size="8" fill="#4A4A4A">GSM8K: 74.4%</text>
+  <text x="495" y="284" text-anchor="middle" font-size="8" fill="#4A4A4A">成本: 10-40x</text>
+  <text x="495" y="304" text-anchor="middle" font-size="8" fill="#4A4A4A">For: Complex reasoning</text>
+  
+  <rect x="600" y="215" width="170" height="110" rx="8" fill="#DCDCDC" stroke="#9A9A9A" stroke-width="1"/>
+  <text x="685" y="235" text-anchor="middle" font-size="10" fill="#2D2D2D" font-weight="600">ToT / 搜索</text>
+  <text x="685" y="252" text-anchor="middle" font-size="8" fill="#353535">BFS/DFS exploration</text>
+  <text x="685" y="268" text-anchor="middle" font-size="8" fill="#353535">24-Game: 74%</text>
+  <text x="685" y="284" text-anchor="middle" font-size="8" fill="#353535">成本: O(k^d)</text>
+  <text x="685" y="304" text-anchor="middle" font-size="8" fill="#353535">For: Planning &amp; search</text>
+</svg>

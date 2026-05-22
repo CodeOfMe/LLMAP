@@ -1,0 +1,219 @@
+{
+  "1:1": {
+    "section": "1.1",
+    "filename": "1.01_PromptVersion.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "import time\n\nclass PromptVersion:\n    \"\"\"Prompt version management\"\"\"\n    def __init__(self):\n    "
+  },
+  "2:2": {
+    "section": "2.1",
+    "filename": "2.02_messages.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "messages = [\n    {\"role\": \"system\", \"content\": \"You are a Python debugging assistant. Keep answers concise, under 100 words.\"},\n"
+  },
+  "2:6": {
+    "section": "2.1",
+    "filename": "2.06_tool_execution.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "import json\n\n# Execute search function\ndef search_product(query, category=None):\n    # Connect to real database here\n"
+  },
+  "2:8": {
+    "section": "2.1",
+    "filename": "2.08_MODEL_CONFIG.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "MODEL_CONFIG = {\n    \"simple_qa\": \"qwen3.5:2b\",        # Simple Q&A, fast\n    \"code_review"
+  },
+  "4:3": {
+    "section": "4.1",
+    "filename": "4.03_quality_score.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def quality_score(text):\n    \"\"\"Simple text quality scoring function\"\"\"\n    score = 0\n    \n    # Appropriate length (too short = insufficient info"
+  },
+  "8:3": {
+    "section": "8.1",
+    "filename": "8.03_estimate_serving_capacity.py",
+    "lang": "python",
+    "output": "Max concurrent requests: 119",
+    "code_preview": "def estimate_serving_capacity(gpu_memory_gb, model_params_b, \n                  "
+  },
+  "9:3": {
+    "section": "9.1",
+    "filename": "9.03_apply_rotary_pos_emb.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def apply_rotary_pos_emb(q, k, cos, sin):\n    \"\"\"Apply RoPE to Q and K\"\"\"\n    def rotate_ha"
+  },
+  "9:4": {
+    "section": "9.1",
+    "filename": "9.04_position_interpolation.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def position_interpolation(pos_ids, max_train_len, max_new_len):\n    \"\"\"Position interpolation: compress new seq"
+  },
+  "9:5": {
+    "section": "9.1",
+    "filename": "9.05_ntk_aware_scaling.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def ntk_aware_scaling(dim, max_train_len, max_new_len, base=10000.0):\n    \"\"\"NTK"
+  },
+  "9:6": {
+    "section": "9.1",
+    "filename": "9.06_alibi_bias.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def alibi_bias(num_heads, seq_len, device):\n    \"\"\"Calculate ALiBi position bias\"\"\"\n    # Each head has a different"
+  },
+  "10:2": {
+    "section": "10.1",
+    "filename": "10.02_RMSNorm.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "class RMSNorm(nn.Module):\n    def __init__(self, hidden_dim, eps=1e-6):\n        "
+  },
+  "10:3": {
+    "section": "10.1",
+    "filename": "10.03_post_norm_vs_pre_norm.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "class PostNormBlock(nn.Module):\n    def __init__(self, hidden_dim, num_heads):\n"
+  },
+  "10:4": {
+    "section": "10.1",
+    "filename": "10.04_gelu.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def gelu(x):\n    return 0.5 * x * (1 + torch.erf(x / math.sqrt(2)))"
+  },
+  "10:5": {
+    "section": "10.1",
+    "filename": "10.05_FeedForwardSwiGLU.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "class FeedForwardSwiGLU(nn.Module):\n    def __init__(self, hidden_dim, ff_dim):\n"
+  },
+  "10:6": {
+    "section": "10.1",
+    "filename": "10.06_TransformerBlock.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "class TransformerBlock(nn.Module):\n    def forward(self, x):\n        x = x + sel"
+  },
+  "10:7": {
+    "section": "10.1",
+    "filename": "10.07_init_weights.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def _init_weights(module):\n    if isinstance(module, nn.Linear):\n        nn.init"
+  },
+  "12:1": {
+    "section": "12.1",
+    "filename": "12.01_zero_shot_cot.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "prompt = f\"{question}\\n\\nPlease analyze step by step and provide the reasoning process.\""
+  },
+  "12:2": {
+    "section": "12.1",
+    "filename": "12.02_few_shot_cot.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "few_shot_prompt = \"\"\"\\nQuestion: A conference room can seat 12 people. 7 have arrived, then 3 groups of 4 each come. How many more chairs are needed?\\nReasoning: 7 seated, 5 seats left. 3x4=12 new people need seats. 12 seats needed, 5 available, 12-5=7\n"
+  },
+  "14:1": {
+    "section": "14.1",
+    "filename": "14.01_tool_vs_skill.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "skill = {\n    \"name\": \"database_search\",\n    \"trigger\": \"When the user needs to find user data, account information, or historical records\",\n    \"context_requirements\": [\"Database connection information\", \"Query permission level\"],\n    \"description\": \"Execute precise queries in MySQL user database\",\n"
+  },
+  "14:3": {
+    "section": "14.1",
+    "filename": "14.03_trigger_keywords.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "trigger_keywords = [\"search\", \"query\", \"lookup\", \"data\", \"records\"]"
+  },
+  "14:4": {
+    "section": "14.1",
+    "filename": "14.04_trigger_intent.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "trigger = \"When the user needs to retrieve specific records from a structured database\""
+  },
+  "14:5": {
+    "section": "14.1",
+    "filename": "14.05_trigger_patterns.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "trigger_patterns = [\n    r\"look\\s*up.*(?:data|records|info)\",\n    r\"(?:is\\s*there|got)\\s+(?:account|user|order)\",\n"
+  },
+  "14:6": {
+    "section": "14.1",
+    "filename": "14.06_parametrized_skill.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "DATABASE_QUERY_SKILL = {\n    \"name\": \"database_query\",\n    \"trigger\": \"When the user needs to query structured data from a database\",\n"
+  },
+  "14:7": {
+    "section": "14.1",
+    "filename": "14.07_hard_skill_safeguards.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "HARD_SKILL_SAFEGUARDS = {\n    \"confirmation_required\": True,      # User confirmation required\n    \""
+  },
+  "17:8": {
+    "section": "17.1",
+    "filename": "17.08_authoritative_decision.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def authoritative_decision(responses, authority):\n    # Authority agent synthesizes all opinions to make a final decision\n    p"
+  },
+  "17:10": {
+    "section": "17.1",
+    "filename": "17.10_StructuredMessageBus.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "class StructuredMessageBus:\n    \"\"\"Structured message bus\"\"\"\n    \n    SCHEMAS = {\n        \"task"
+  },
+  "18:2": {
+    "section": "18.1",
+    "filename": "18.02_summarize_compress.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def summarize_compress(messages, max_recent=4):\n    \"\"\"Keep the most recent conversation turns, summarize earlier ones\"\"\"\n   "
+  },
+  "18:3": {
+    "section": "18.1",
+    "filename": "18.03_selective_compress.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def selective_compress(messages, importance_threshold=0.7):\n    \"\"\"Keep or remove messages based on importance score\"\"\"\n"
+  },
+  "18:4": {
+    "section": "18.1",
+    "filename": "18.04_structured_compress.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def structured_compress(messages):\n    \"\"\"Compress free-text conversations into structured records\"\"\"\n    records = []\n  "
+  },
+  "19:2": {
+    "section": "19.1",
+    "filename": "19.02_evaluate_component.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def evaluate_component(component_name, test_cases):\n    \"\"\"Component-level evaluation\"\"\"\n    results "
+  },
+  "19:3": {
+    "section": "19.1",
+    "filename": "19.03_evaluate_flow.py",
+    "lang": "python",
+    "output": null,
+    "code_preview": "def evaluate_flow(flow_name, scenarios):\n    \"\"\"Flow-level evaluation\"\"\"\n    results = []\n    fo"
+  }
+}

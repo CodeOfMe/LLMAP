@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="780" height="360" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">Normalization &amp; Activation Evolution</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">数据来源：[Zhang &amp; Sennrich, 2019] [Shazeer, 2020]</text>
+  
+  <!-- Normalization -->
+  <text x="200" y="85" text-anchor="middle" font-size="13" fill="#1A1A1A" font-weight="700">Normalization Schemes</text>
+  
+  <!-- Post-Norm -->
+  <rect x="30" y="100" width="340" height="55" rx="8" fill="#F0F0F0" stroke="#9A9A9A" stroke-width="1"/>
+  <text x="200" y="120" text-anchor="middle" font-size="11" fill="#2D2D2D" font-weight="600">Post-Norm</text>
+  <text x="200" y="140" text-anchor="middle" font-size="9" fill="#6A6A6A">x + Sublayer → LayerNorm → Output</text>
+  
+  <!-- Arrow -->
+  <line x1="200" y1="155" x2="200" y2="175" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Pre-Norm -->
+  <rect x="30" y="175" width="340" height="55" rx="8" fill="#D8D8D8" stroke="#8E8E8E" stroke-width="1"/>
+  <text x="200" y="195" text-anchor="middle" font-size="11" fill="#3A3A3A" font-weight="600">Pre-Norm</text>
+  <text x="200" y="215" text-anchor="middle" font-size="9" fill="#6A6A6A">LayerNorm(x) → Sublayer → x + Output</text>
+  
+  <rect x="30" y="245" width="340" height="100" rx="8" fill="#F0F0F0" stroke="#8E8E8E" stroke-width="1"/>
+  <text x="200" y="265" text-anchor="middle" font-size="9" fill="#3A3A3A">✓ More stable training, no warmup needed</text>
+  <text x="200" y="285" text-anchor="middle" font-size="9" fill="#3A3A3A">✓ Gradients flow through residual connections</text>
+  <text x="200" y="305" text-anchor="middle" font-size="9" fill="#3A3A3A">✓ Deep models are trainable</text>
+  <text x="200" y="330" text-anchor="middle" font-size="10" fill="#4D4D4D" font-weight="600">All modern LLMs use Pre-Norm</text>
+  
+  <!-- Activation -->
+  <text x="600" y="85" text-anchor="middle" font-size="13" fill="#1A1A1A" font-weight="700">Activation Functions</text>
+  
+  <!-- ReLU -->
+  <rect x="430" y="100" width="340" height="45" rx="8" fill="#F0F0F0" stroke="#9A9A9A" stroke-width="1"/>
+  <text x="600" y="120" text-anchor="middle" font-size="11" fill="#2D2D2D" font-weight="600">ReLU: max(0, x)</text>
+  <text x="600" y="135" text-anchor="middle" font-size="8" fill="#6A6A6A">Simple but has "dead neuron" problem</text>
+  
+  <!-- GELU -->
+  <rect x="430" y="155" width="340" height="45" rx="8" fill="#E8E8E0" stroke="#909088" stroke-width="1"/>
+  <text x="600" y="175" text-anchor="middle" font-size="11" fill="#353535" font-weight="600">GELU: x · Φ(x)</text>
+  <text x="600" y="190" text-anchor="middle" font-size="8" fill="#6A6A6A">Smooth transition, no dead neuron problem</text>
+  
+  <!-- SwiGLU -->
+  <rect x="430" y="210" width="340" height="45" rx="8" fill="#D8D8D8" stroke="#8E8E8E" stroke-width="1"/>
+  <text x="600" y="230" text-anchor="middle" font-size="11" fill="#3A3A3A" font-weight="600">SwiGLU: (xV) · SiLU(xW)</text>
+  <text x="600" y="245" text-anchor="middle" font-size="8" fill="#6A6A6A">Gating mechanism, perplexity reduced 0.5-1.0</text>
+  
+  <rect x="430" y="270" width="340" height="75" rx="8" fill="#F0F0F0" stroke="#8E8E8E" stroke-width="1"/>
+  <text x="600" y="290" text-anchor="middle" font-size="9" fill="#3A3A3A">✓ Proven most effective</text>
+  <text x="600" y="310" text-anchor="middle" font-size="9" fill="#3A3A3A">✓ Gating enhances expressiveness</text>
+  <text x="600" y="330" text-anchor="middle" font-size="10" fill="#4D4D4D" font-weight="600">Used by LLaMA, Qwen, Mistral</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4E4E4E"/>
+    </marker>
+  </defs>
+</svg>

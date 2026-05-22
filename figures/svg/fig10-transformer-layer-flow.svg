@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="800" height="400" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="410" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">LLaMA 3 8B Transformer Layer Data Flow</text>
+  <text x="410" y="60" text-anchor="middle" font-size="10" fill="#909090">Pre-Norm Architecture + Residual Connection + SwiGLU FFN</text>
+  
+  <!-- Input -->
+  <rect x="30" y="85" width="120" height="40" rx="8" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1.5"/>
+  <text x="90" y="110" text-anchor="middle" font-size="11" fill="#353535" font-weight="600">Input x</text>
+  
+  <!-- Arrow to RMSNorm 1 -->
+  <line x1="150" y1="105" x2="190" y2="105" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- RMSNorm 1 -->
+  <rect x="190" y="85" width="130" height="40" rx="8" fill="#DDDDDD" stroke="#606060" stroke-width="1.5"/>
+  <text x="255" y="110" text-anchor="middle" font-size="11" fill="#383838" font-weight="600">RMSNorm</text>
+  
+  <!-- Arrow to Attention -->
+  <line x1="320" y1="105" x2="360" y2="105" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Attention -->
+  <rect x="360" y="85" width="150" height="40" rx="8" fill="#E5E0E5" stroke="#5D5D60" stroke-width="1.5"/>
+  <text x="435" y="110" text-anchor="middle" font-size="11" fill="#3D3D3D" font-weight="600">Multi-Head Attn</text>
+  
+  <!-- Arrow to Add 1 -->
+  <line x1="510" y1="105" x2="550" y2="105" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Add 1 -->
+  <circle cx="575" cy="105" r="20" fill="#F0F0E8" stroke="#5D5D5D" stroke-width="2"/>
+  <text x="575" y="110" text-anchor="middle" font-size="16" font-weight="700" fill="#353535">+</text>
+  
+  <!-- Residual connection 1 (from input to Add 1) -->
+  <path d="M 90 125 L 90 180 L 575 180 L 575 125" fill="none" stroke="#5D5D5D" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="330" y="195" text-anchor="middle" font-size="9" fill="#353535">Residual Conn 1</text>
+  
+  <!-- Arrow from Add 1 to RMSNorm 2 -->
+  <line x1="595" y1="105" x2="630" y2="105" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- RMSNorm 2 -->
+  <rect x="630" y="85" width="130" height="40" rx="8" fill="#DDDDDD" stroke="#606060" stroke-width="1.5"/>
+  <text x="695" y="110" text-anchor="middle" font-size="11" fill="#383838" font-weight="600">RMSNorm</text>
+  
+  <!-- Arrow to FFN split -->
+  <line x1="760" y1="105" x2="780" y2="105" stroke="#4E4E4E" stroke-width="1.5"/>
+  <line x1="780" y1="105" x2="780" y2="250" stroke="#4E4E4E" stroke-width="1.5"/>
+  <line x1="780" y1="250" x2="760" y2="250" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="780" y1="250" x2="760" y2="310" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- FFN: w1 + SiLU -->
+  <rect x="590" y="230" width="170" height="40" rx="8" fill="#D5D5D5" stroke="#585858" stroke-width="1.5"/>
+  <text x="675" y="255" text-anchor="middle" font-size="11" fill="#303030" font-weight="600">w1 → SiLU (Gating)</text>
+  
+  <!-- FFN: w3 -->
+  <rect x="590" y="290" width="170" height="40" rx="8" fill="#D5D5D5" stroke="#585858" stroke-width="1.5"/>
+  <text x="675" y="315" text-anchor="middle" font-size="11" fill="#303030" font-weight="600">w3 (Value Projection)</text>
+  
+  <!-- Multiply -->
+  <circle cx="530" cy="270" r="20" fill="#F0F0E8" stroke="#5D5D5D" stroke-width="2"/>
+  <text x="530" y="275" text-anchor="middle" font-size="16" font-weight="700" fill="#353535">×</text>
+  
+  <!-- Arrows to Multiply -->
+  <line x1="590" y1="250" x2="550" y2="260" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="590" y1="310" x2="550" y2="280" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Arrow from Multiply to w2 -->
+  <line x1="510" y1="270" x2="470" y2="270" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- FFN: w2 -->
+  <rect x="320" y="250" width="150" height="40" rx="8" fill="#D5D5D5" stroke="#585858" stroke-width="1.5"/>
+  <text x="395" y="275" text-anchor="middle" font-size="11" fill="#303030" font-weight="600">w2 (Output Projection)</text>
+  
+  <!-- Arrow from w2 to Add 2 -->
+  <line x1="320" y1="270" x2="280" y2="270" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Add 2 -->
+  <circle cx="255" cy="270" r="20" fill="#F0F0E8" stroke="#5D5D5D" stroke-width="2"/>
+  <text x="255" y="275" text-anchor="middle" font-size="16" font-weight="700" fill="#353535">+</text>
+  
+  <!-- Residual connection 2 (from Add 1 output to Add 2) -->
+  <path d="M 575 125 L 575 340 L 255 340 L 255 290" fill="none" stroke="#5D5D5D" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="415" y="355" text-anchor="middle" font-size="9" fill="#353535">Residual Conn 2</text>
+  
+  <!-- Output -->
+  <line x1="235" y1="270" x2="200" y2="270" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="30" y="250" width="170" height="40" rx="8" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="1.5"/>
+  <text x="115" y="275" text-anchor="middle" font-size="11" fill="#2D2D2D" font-weight="600">Output (to next layer)</text>
+  
+  <!-- Legend -->
+  <rect x="30" y="320" width="200" height="70" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="40" y="332" width="12" height="12" rx="2" fill="#E5E0E5" stroke="#5D5D60" stroke-width="1"/>
+  <text x="58" y="342" font-size="8" fill="#4E4E4E">Attention (~42M params)</text>
+  <rect x="40" y="350" width="12" height="12" rx="2" fill="#D5D5D5" stroke="#585858" stroke-width="1"/>
+  <text x="58" y="360" font-size="8" fill="#4E4E4E">SwiGLU FFN (~176M params)</text>
+  <rect x="40" y="368" width="12" height="12" rx="2" fill="#DDDDDD" stroke="#606060" stroke-width="1"/>
+  <text x="58" y="378" font-size="8" fill="#4E4E4E">RMSNorm (~4K params)</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4E4E4E"/>
+    </marker>
+  </defs>
+</svg>

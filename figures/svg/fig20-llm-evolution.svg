@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="Helvetica, Arial, sans-serif">
+  <rect x="10" y="10" width="780" height="380" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="400" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">LLM Capability Evolution: From Pre-training to Inference-Time Scaling</text>
+  <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">Data source: [DeepSeek, 2025] [OpenAI, 2024]</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="200" x2="700" y2="200" stroke="#909090" stroke-width="2"/>
+  
+  <!-- 2020 -->
+  <circle cx="150" cy="200" r="8" fill="#4D4D4D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="150" y="175" text-anchor="middle" font-size="10" fill="#6A6A6A" font-weight="600">2020</text>
+  <rect x="80" y="220" width="140" height="80" rx="6" fill="#F0F0F0" stroke="#9A9A9A"/>
+  <text x="150" y="240" text-anchor="middle" font-size="9" fill="#2D2D2D" font-weight="600">Pre-training Era</text>
+  <text x="150" y="258" text-anchor="middle" font-size="8" fill="#6A6A6A">GPT-3 175B</text>
+  <text x="150" y="273" text-anchor="middle" font-size="8" fill="#6A6A6A">Few-Shot Learning</text>
+  <text x="150" y="288" text-anchor="middle" font-size="8" fill="#6A6A6A">AIME: ~5%</text>
+  
+  <!-- 2022 -->
+  <circle cx="300" cy="200" r="8" fill="#5D5D5D" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="300" y="175" text-anchor="middle" font-size="10" fill="#6A6A6A" font-weight="600">2022</text>
+  <rect x="230" y="220" width="140" height="80" rx="6" fill="#E8E8E0" stroke="#909088"/>
+  <text x="300" y="240" text-anchor="middle" font-size="9" fill="#353535" font-weight="600">Chain-of-Thought Era</text>
+  <text x="300" y="258" text-anchor="middle" font-size="8" fill="#6A6A6A">CoT prompting</text>
+  <text x="300" y="273" text-anchor="middle" font-size="8" fill="#6A6A6A">Self-Consistency</text>
+  <text x="300" y="288" text-anchor="middle" font-size="8" fill="#6A6A6A">AIME: ~15%</text>
+  
+  <!-- 2024 -->
+  <circle cx="450" cy="200" r="8" fill="#555555" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="450" y="175" text-anchor="middle" font-size="10" fill="#6A6A6A" font-weight="600">2024</text>
+  <rect x="380" y="220" width="140" height="80" rx="6" fill="#D8D8D8" stroke="#8E8E8E"/>
+  <text x="450" y="240" text-anchor="middle" font-size="9" fill="#3A3A3A" font-weight="600">Reasoning Model Era</text>
+  <text x="450" y="258" text-anchor="middle" font-size="8" fill="#6A6A6A">o1, DeepSeek-R1</text>
+  <text x="450" y="273" text-anchor="middle" font-size="8" fill="#6A6A6A">RL-trained Reasoning</text>
+  <text x="450" y="288" text-anchor="middle" font-size="8" fill="#6A6A6A">AIME: 72.6%</text>
+  
+  <!-- 2025+ -->
+  <circle cx="600" cy="200" r="8" fill="#4A4A4A" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="600" y="175" text-anchor="middle" font-size="10" fill="#6A6A6A" font-weight="600">2025+</text>
+  <rect x="530" y="220" width="140" height="80" rx="6" fill="#D8D8D8" stroke="#8A8A8A"/>
+  <text x="600" y="240" text-anchor="middle" font-size="9" fill="#2D2D2D" font-weight="600">Inference-Time Scaling</text>
+  <text x="600" y="258" text-anchor="middle" font-size="8" fill="#6A6A6A">Adaptive Reasoning Depth</text>
+  <text x="600" y="273" text-anchor="middle" font-size="8" fill="#6A6A6A">Hybrid Thinking Mode</text>
+  <text x="600" y="288" text-anchor="middle" font-size="8" fill="#6A6A6A">AIME: 90%+</text>
+  
+  <!-- Arrow between points -->
+  <line x1="158" y1="200" x2="292" y2="200" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="308" y1="200" x2="442" y2="200" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="458" y1="200" x2="592" y2="200" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow)"/>
+  
+  <!-- Trend label -->
+  <text x="400" y="340" text-anchor="middle" font-size="12" fill="#4E4E4E" font-weight="600">Reasoning capability grows exponentially over time, but compute costs also rise</text>
+  <text x="400" y="360" text-anchor="middle" font-size="10" fill="#6A6A6A">Key trend: Not all problems need deep reasoning → Adaptive reasoning depth becomes a standard capability</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4E4E4E"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 600" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4E4E4E"/>
+    </marker>
+    
+    
+    
+  </defs>
+  
+  <rect x="10" y="10" width="820" height="580" rx="16" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="420" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="#1A1A1A">LLaMA Decoder-Only Architecture Data Flow</text>
+  <text x="420" y="58" text-anchor="middle" font-size="10" fill="#909090">Ref: [Touvron et al., 2023] [Dubey et al., 2024]</text>
+  
+  <text x="110" y="92" text-anchor="middle" font-size="11" font-weight="600" fill="#4E4E4E">Input Tokens</text>
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="38" height="26" rx="4" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1"/>
+    <text x="19" y="17" text-anchor="middle" font-size="10" fill="#353535">The</text>
+    <rect x="43" y="0" width="38" height="26" rx="4" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1"/>
+    <text x="62" y="17" text-anchor="middle" font-size="9" fill="#353535">alg</text>
+    <rect x="86" y="0" width="38" height="26" rx="4" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1"/>
+    <text x="105" y="17" text-anchor="middle" font-size="9" fill="#353535">or</text>
+    <rect x="129" y="0" width="38" height="26" rx="4" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1"/>
+    <text x="148" y="17" text-anchor="middle" font-size="9" fill="#353535">ith</text>
+  </g>
+  
+  <line x1="110" y1="128" x2="110" y2="145" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  
+  <rect x="40" y="150" width="140" height="42" rx="8" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="1.5"/>
+  <text x="110" y="169" text-anchor="middle" font-size="11" font-weight="600" fill="#2D2D2D">Token Embedding</text>
+  <text x="110" y="184" text-anchor="middle" font-size="8" fill="#4A4A4A">(32000 × 4096)</text>
+  
+  <rect x="210" y="150" width="150" height="42" rx="8" fill="#E8E8E0" stroke="#5D5D5D" stroke-width="1.5"/>
+  <text x="285" y="169" text-anchor="middle" font-size="11" font-weight="600" fill="#353535">+ RoPE Positional Encoding</text>
+  <text x="285" y="184" text-anchor="middle" font-size="8" fill="#444444">[Su et al., 2024]</text>
+  
+  <line x1="180" y1="171" x2="210" y2="171" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  
+  <rect x="50" y="210" width="520" height="220" rx="12" fill="#F0F0F0" stroke="#909090" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="310" y="232" text-anchor="middle" font-size="12" font-weight="700" fill="#4E4E4E">× 32 Layers (LLaMA-7B)</text>
+  
+  <rect x="70" y="248" width="110" height="34" rx="6" fill="#DDDDDD" stroke="#606060" stroke-width="1"/>
+  <text x="125" y="268" text-anchor="middle" font-size="9" font-weight="600" fill="#383838">RMSNorm</text>
+  
+  <line x1="180" y1="265" x2="205" y2="265" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  
+  <rect x="208" y="248" width="140" height="44" rx="6" fill="#E5E0E5" stroke="#5D5D60" stroke-width="1.5"/>
+  <text x="278" y="267" text-anchor="middle" font-size="9" font-weight="700" fill="#3D3D3D">Multi-Head Attn</text>
+  <text x="278" y="282" text-anchor="middle" font-size="7" fill="#454545">GQA (32Q, 8KV)</text>
+  
+  <line x1="348" y1="270" x2="375" y2="270" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  
+  <circle cx="395" cy="270" r="15" fill="#F0F0E8" stroke="#5D5D5D" stroke-width="1.5"/>
+  <text x="395" y="275" text-anchor="middle" font-size="13" font-weight="700" fill="#353535">+</text>
+  <line x1="60" y1="230" x2="60" y2="270" stroke="#4E4E4E" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="60" y1="270" x2="380" y2="270" stroke="#4E4E4E" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow3)"/>
+  
+  <line x1="410" y1="270" x2="440" y2="270" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  
+  <rect x="443" y="248" width="110" height="34" rx="6" fill="#DDDDDD" stroke="#606060" stroke-width="1"/>
+  <text x="498" y="268" text-anchor="middle" font-size="9" font-weight="600" fill="#383838">RMSNorm</text>
+  
+  <line x1="553" y1="270" x2="575" y2="270" stroke="#4E4E4E" stroke-width="1.5"/>
+  
+  <rect x="578" y="248" width="140" height="44" rx="6" fill="#D5D5D5" stroke="#585858" stroke-width="1.5"/>
+  <text x="648" y="267" text-anchor="middle" font-size="9" font-weight="700" fill="#303030">SwiGLU FFN</text>
+  <text x="648" y="282" text-anchor="middle" font-size="7" fill="#454545">(14336 hidden)</text>
+  
+  <circle cx="575" cy="310" r="15" fill="#F0F0E8" stroke="#5D5D5D" stroke-width="1.5"/>
+  <text x="575" y="315" text-anchor="middle" font-size="13" font-weight="700" fill="#353535">+</text>
+  <line x1="648" y1="292" x2="648" y2="310" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <line x1="410" y1="270" x2="410" y2="425" stroke="#4E4E4E" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="410" y1="310" x2="560" y2="310" stroke="#4E4E4E" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow3)"/>
+  
+  <line x1="310" y1="430" x2="310" y2="465" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  
+  <rect x="235" y="470" width="150" height="34" rx="6" fill="#DDDDDD" stroke="#606060" stroke-width="1.5"/>
+  <text x="310" y="491" text-anchor="middle" font-size="10" font-weight="600" fill="#383838">Final RMSNorm</text>
+  
+  <line x1="310" y1="504" x2="310" y2="525" stroke="#4E4E4E" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  
+  <rect x="205" y="530" width="210" height="38" rx="6" fill="#F0F0F0" stroke="#4D4D4D" stroke-width="1.5"/>
+  <text x="310" y="549" text-anchor="middle" font-size="10" font-weight="600" fill="#2D2D2D">Output Projection (Weight Sharing)</text>
+  <text x="310" y="562" text-anchor="middle" font-size="8" fill="#404040">(Shares parameters with Embedding)</text>
+  
+  <rect x="600" y="210" width="210" height="210" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="705" y="232" text-anchor="middle" font-size="10" font-weight="700" fill="#1A1A1A">LLaMA-7B Parameters</text>
+  <text x="705" y="252" text-anchor="middle" font-size="9" fill="#4E4E4E">Total: 6.7B</text>
+  <line x1="615" y1="260" x2="795" y2="260" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="620" y="268" width="12" height="12" rx="2" fill="#E5E0E5" stroke="#5D5D60" stroke-width="1"/>
+  <text x="638" y="278" font-size="8" fill="#4E4E4E">Attention: 2.1B (31%)</text>
+  <rect x="620" y="288" width="12" height="12" rx="2" fill="#D5D5D5" stroke="#585858" stroke-width="1"/>
+  <text x="638" y="298" font-size="8" fill="#4E4E4E">FFN: 3.5B (52%)</text>
+  <rect x="620" y="308" width="12" height="12" rx="2" fill="#D8D8D8" stroke="#4A4A4A" stroke-width="1"/>
+  <text x="638" y="318" font-size="8" fill="#4E4E4E">Embedding: 0.9B (14%)</text>
+  <text x="705" y="345" text-anchor="middle" font-size="8" fill="#909090">Source: [Touvron, 2023]</text>
+  <text x="705" y="360" text-anchor="middle" font-size="8" fill="#909090">See Ch 5 for parameter calculations</text>
+  <rect x="620" y="375" width="12" height="12" rx="2" fill="#F0F0E8" stroke="#5D5D5D" stroke-width="1"/>
+  <text x="638" y="385" font-size="8" fill="#4E4E4E">Residual Connection (⊕)</text>
+  <text x="705" y="400" text-anchor="middle" font-size="7" fill="#909090">[He et al., 2016]</text>
+</svg>
