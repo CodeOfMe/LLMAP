@@ -42,7 +42,7 @@ Third, all code actually runs. Not pseudocode, not just function signatures with
 
 ## References
 
-The complete reference list (with key contributions and significance notes) is in [references.md](references.md).
+The complete reference list (with key contributions and significance notes) is at the end of this book.
 
 Each chapter also has its own references, and PDF download links for core papers are in `references/papers/README.md`.
 
