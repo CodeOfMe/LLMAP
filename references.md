@@ -1,7 +1,5 @@
 # References
 
-> Core papers and resources cited in this textbook, organized by chapter. Each paper is annotated with its key innovation and significance within this textbook. For PDF download links, see `references/papers/README.md`.
-
 ## Chapter 1: Prompt Engineering
 
 | # | Paper | Source | Key Innovation | Significance |

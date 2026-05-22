@@ -1,4 +1,4 @@
-# LLMAP — Large Language Models: An Agent Perspective
+# Preface
 
 When ChatGPT first launched, some people thought LLMs were just chatbots. Chatting is only the surface—what's happening underneath is what truly matters.
 

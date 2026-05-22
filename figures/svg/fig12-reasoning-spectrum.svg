@@ -5,7 +5,7 @@
   <text x="400" y="58" text-anchor="middle" font-size="10" fill="#909090">数据来源：[Wei et al., 2022] [Wang et al., 2023] [Yao et al., 2023]</text>
   
   <!-- Spectrum bar -->
-  <rect x="80" y="90" width="640" height="60" rx="10" fill="url(#spectrum-grad)"/>
+  <rect x="80" y="90" width="640" height="60" rx="10" fill="#E0E0E0"/>
   
   <!-- Gradient definition -->
   <defs>
